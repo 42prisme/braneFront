@@ -8,7 +8,13 @@
   </nz-header>
   <!-- body -->
   <nz-content>
-    <!-- <div nz-row *ngFor="let project of projects">
-        <p nz-col nzSpan="6">word</p>
-    </div> -->
+    <div nz-row>
+      <div *ngFor="let project of projects">
+        <nz-card style="width:300px;">
+          <p>Card content</p>
+          <p>Card content</p>
+          <p>Card content</p>
+        </nz-card>
+      </div>
+    </div>
   </nz-content>

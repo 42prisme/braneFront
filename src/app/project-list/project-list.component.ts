@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProjectEntity } from '../entity/ProjectItem';
+import { ProjectEntity } from '../entity/ProjectEntity';
 import { ProjectService } from '../Service/ProjectService';
 
 @Component({
@@ -10,17 +10,12 @@ import { ProjectService } from '../Service/ProjectService';
 export class ProjectListComponent implements OnInit {
 
   projects: ProjectEntity[] = [];
-  _service: ProjectService;
-
-  constructor(service: ProjectService) 
-  { 
-    this._service = service;
-  }
+  constructor(private service: ProjectService) { }
 
   ngOnInit(): void {
-    // this._service.GetAllProjects().subscribe( val => {
-    //   this.projects = val;
-    // });
+    this.service.GetAllProjects().subscribe( val => {
+      this.projects = val;
+    });
   }
 
 }

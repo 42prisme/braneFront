@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectEntity } from '../entity/ProjectEntity';
 import { ProjectService } from '../Service/ProjectService';
+import { UserEntity } from '../entity/UserEntity';
+import { UserService } from '../Service/UserService';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-project-list',
@@ -10,12 +13,23 @@ import { ProjectService } from '../Service/ProjectService';
 export class ProjectListComponent implements OnInit {
 
   projects: ProjectEntity[] = [];
-  constructor(private service: ProjectService) { }
+  constructor(private project_service: ProjectService, private user_service: UserService) { }
 
   ngOnInit(): void {
-    this.service.GetAllProjects().subscribe( val => {
+    this.project_service.GetAllProjects().subscribe( val => {
       this.projects = val;
     });
+  }
+
+  // public populateUserEntity(): void {
+  //   this.user_service.GetUser(id).subscribe( val => {
+  //     console.log(val.name);
+  //     return val.name;
+  //   });
+  // }
+
+  public getUser(id: number): Observable<UserEntity> {
+    return this.user_service.GetUser(id).pipe()
   }
 
 }

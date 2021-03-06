@@ -1,6 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-// import { BrowserModule } from '@angular/platform-browser';
 import { ProjectEntity } from '../entity/ProjectEntity';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';

@@ -15,13 +15,15 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { NzCardModule } from 'ng-zorro-antd/card';
+import { JalonListComponent } from './jalon-list/jalon-list.component';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    JalonListComponent
   ],
   imports: [
     BrowserModule,

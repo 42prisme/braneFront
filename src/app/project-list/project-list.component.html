@@ -10,9 +10,9 @@
   <nz-content>
     <div nz-row>
       <div *ngFor="let project of projects">
-        <nz-card style="width:300px;">
-          <p>Card content</p>
-          <p>Card content</p>
+        <nz-card style="width:300px;margin: 4%;" onclick="">
+          <h3>{{ project.name }}</h3>
+          <p>assignee: {{ getUser(project.assigneeId) }}</p>
           <p>Card content</p>
         </nz-card>
       </div>

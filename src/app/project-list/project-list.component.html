@@ -10,11 +10,12 @@
   <nz-content>
     <div nz-row>
       <div *ngFor="let project of projects">
-        <nz-card style="width:300px;margin: 4%;" onclick="">
-          <h3>{{ project.name }}</h3>
-          <p>assignee: {{ getUser(project.assigneeId) }}</p>
-          <p>Card content</p>
-        </nz-card>
+        <a routerLink="/JalonList">
+          <nz-card style="width:300px;margin: 4%;" onclick="">
+            <h3>{{ project.name }}</h3>
+            <p>assignee: {{ project.assignee.name }}</p>
+          </nz-card>
+        </a>
       </div>
     </div>
   </nz-content>
